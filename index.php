@@ -28,21 +28,21 @@ require_once 'Develop/For_Test_Develop.php';
             </div>
         </div>
         <!-- POSITION KONTAINER AND CARD KATEGORY -->
-        <div class="position-absolute mycontainer">
+        <div id="kategory" class="position-absolute mycontainer">
             <div class="container">
                 <h2>FOTOGALÉRIA</h2>
-                <h3 class="mt-my">KATEGÓRIE</h3>
+                <h3 class="mt-my"> KATEGÓRIE</h3>
                 <hr>
                 <div class="card-deck clearfix">
                     <div class="mt-2">
                         <!-- IBA SOM SI POMOHOL AZ NEMUSIM VSETKO OPAKOVANE PISAT DUFAM ZE TO NEVADÍ -->
                         <?php foreach ($kategory as $kat):?>
-                        <div id="card" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
-                            <div class="card opendrop border-0 mt-4">
+                        <div id="card" class="start-galery col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
+                            <div class="card border-0 mt-4">
                                 <img class="card-img-top" src="<?= $kat['image'];?>" alt="Kategória obrázkov <?= $kat['Name'];?>"/>
                                 <div class="card-body myborder">
                                     <p class="card-my text-center bold  m-0 card-title"><?= $kat['Name'];?></p>
-                                    <p class="card-text mycall text-center">6 fotiek</p>
+                                    <p class="card-text mycall text-center"><?= $kat['count'];?></p>
                                 </div>
                             </div>
                         </div>
@@ -61,6 +61,37 @@ require_once 'Develop/For_Test_Develop.php';
                 <p class="myfoot mt-5">webdesign bart.sk</p>
             </div>
         </div>
+
+        <div id="galerry" class="display-non position-absolute mycontainer">
+            <div class="container">
+                <h2>FOTOGALÉRIA</h2>
+                <h3 class="mt-my back-galery"><img src="Media/back.svg" class="mr-3" alt="back"> architektúra</h3>
+                <hr>
+                <div class="card-deck clearfix">
+                    <div class="mt-2">
+                        <!-- IBA SOM SI POMOHOL AZ NEMUSIM VSETKO OPAKOVANE PISAT DUFAM ZE TO NEVADÍ -->
+                        <?php foreach ($Galerry as $kat):?>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
+                                <div class="card border-0 mt-4">
+                                    <img class="card-img-top h-100" src="<?= $kat['image'];?>" alt="Kategória obrázkov <?= $kat['Name'];?>"/>
+                                </div>
+                            </div>
+                        <?php endforeach;?>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
+                            <div class="opendrop card mt-4 card-block">
+                                <div class="card-body text-center mt-5">
+                                    <img src="Media/fot.svg" width="40" alt="Pridať kategóriu">
+                                    <p class="mt-2 text-center addkategory">PRIDAŤ fotky</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FOOTER -->
+                <p class="myfoot mt-5">webdesign bart.sk</p>
+            </div>
+        </div>
+
         <script>
         /** ANIMATE BACKGROUND HOVER **/
         function animatehover(){
@@ -77,6 +108,16 @@ require_once 'Develop/For_Test_Develop.php';
 
             $('.opendrop').click(function (){
                 $('.startdrop').toggle('fade',40);
+            });
+
+            $('.start-galery').click(function (){
+                $('#kategory').toggle('fade',100);
+                $('#galerry').toggle('fade',200);
+            })
+
+            $('.back-galery').click(function (){
+                $('#galerry').toggle('fade',100);
+                $('#kategory').toggle('fade',200);
             })
         })
 
