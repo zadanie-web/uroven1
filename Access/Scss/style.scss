@@ -1,0 +1,113 @@
+/** SETTING: COLOR ,BACKGROUND .FONT ,BRIGHTNESS ,BLUR  */
+/** BRIGHTNESS AND BLUR FOR HEADER BACKGROUND IMG */
+$color_header:  #ffffff;
+$color_fot: #aaaaaa;
+$bc_color: #eeeeee;
+$color_card: #555555;
+$font:Roboto,serif;
+$brightness:70%;
+$blur:5px;
+
+body{
+  font-family: $font;
+}
+
+h2,h3,.addkategory{
+  font-style: normal;
+  text-align: left;
+  text-transform: uppercase;
+  line-height: normal;
+  letter-spacing: normal;
+
+}
+
+h2,h3{
+  color: $color_header;
+  font-weight: 500;
+
+}
+
+.addkategory{
+  height: 16px;
+  color: $color_fot;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 30.98px;
+}
+
+
+h2 {
+  font-size: 24px;
+  letter-spacing:1.2px;
+  font-weight: 700;
+}
+
+h3{
+  font-weight: 550;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+}
+
+.headerimage{
+  height: 338px;
+  filter: brightness($brightness);
+
+  img{
+    height: 100%;
+    filter: blur($blur);
+  }
+}
+
+.myfoot{
+  color:$color_fot ;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 30.98px;
+  text-align: left;
+  letter-spacing: 0.7px;
+}
+
+hr{
+  height: 2px;
+  background-color: $bc_color;
+  opacity: 0.2;
+}
+
+.card-deck .card{
+  margin-left: 20px;
+}
+
+.card{
+  float: left;
+  cursor: pointer;
+  width: 15.5em;
+  height: 13em;
+  background-color: #ffffff;
+  color: $color_card;
+
+  .card-img-top {
+    height: 70%;
+  }
+
+  .card-text,.card-title{
+    font-size: 16px;
+    font-style: normal;
+  }
+
+  .card-title{
+    font-weight: 600;
+  }
+
+}
+
+.mycontainer{
+  top:10%;
+  width:100%;
+}
+
+.mt-my{
+  margin-top: 4rem !important;
+}
+
+
