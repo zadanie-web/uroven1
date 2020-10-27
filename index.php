@@ -39,6 +39,7 @@ require_once 'Develop/For_Test_Develop.php';
                     <div class="mt-2">
                         <!-- IBA SOM SI POMOHOL AZ NEMUSIM VSETKO OPAKOVANE PISAT DUFAM ZE TO NEVADÍ -->
                         <?php foreach ($kategory as $kat):?>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
                         <div class="card border-0 mt-4">
                             <img class="card-img-top" src="<?= $kat['image'];?>" alt="Kategória obrázkov <?= $kat['Name'];?>">
                             <div class="card-body myborder">
@@ -46,11 +47,15 @@ require_once 'Develop/For_Test_Develop.php';
                                 <p class="card-text mycall text-center"></p>
                             </div>
                         </div>
+                        </div>
+
                         <?php endforeach;?>
-                        <div class="card mt-4 card-block">
-                            <div class="card-body text-center mt-5">
-                                <img src="Media/add.svg" width="40" alt="Pridať kategóriu">
-                                <p class="mt-2 text-center addkategory">PRIDAŤ KATEGÓRIU</p>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
+                            <div class="card mt-4 card-block">
+                                <div class="card-body text-center mt-5">
+                                    <img src="Media/add.svg" width="40" alt="Pridať kategóriu">
+                                    <p class="mt-2 text-center addkategory">PRIDAŤ KATEGÓRIU</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -59,21 +64,17 @@ require_once 'Develop/For_Test_Develop.php';
                 <p class="myfoot mt-5">webdesign bart.sk</p>
             </div>
         </div>
+        <script>
+        /** ANIMATE BACKGROUND HOVER **/
+            function animatehover(){
+                $('.card-img-top').hover(function() {
+                    let newImg = $(this).attr('src');
+                    $('#headerbc').attr('src',newImg)
+                });
+            }
 
-
-
-
-    <script>
-        animatehover();
-        /**
-         * ANIMATE BACKGROUND HOVER
-         */
-        function animatehover(){
-            $('.card-img-top').hover(function() {
-                let newImg = $(this).attr('src');
-                $('#headerbc').attr('src',newImg)
-            });
-        }
-    </script>
+            /** CALL MY FUNCTION */
+            animatehover();
+        </script>
     </body>
 </html>
