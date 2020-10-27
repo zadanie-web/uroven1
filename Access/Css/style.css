@@ -76,10 +76,10 @@ hr {
     font-size: 16px;
     font-style: normal; }
   .card .card-title {
-    font-weight: 600; }
+    font-weight: 500; }
 
 .card:hover {
-  box-shadow: 0 0 2px #333333;
+  box-shadow: 1px 1px 12px rgba(33, 33, 33, 0.1);
   bottom: 10px;
   position: relative; }
   .card:hover .card-text {
@@ -89,7 +89,8 @@ hr {
     -o-transform: translate(0px, 0px);
     -ms-transform: translate(0px, 0px);
     opacity: 1;
-    display: block; }
+    display: block;
+    color: #aaaaaa; }
   .card:hover .card-img-top {
     opacity: 0.9;
     transform: scale(1.01);
