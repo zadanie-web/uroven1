@@ -64,6 +64,8 @@ hr {
   color: #555555; }
   .card .card-img-top {
     height: 70%; }
+  .card .card-body.myborder {
+    border: 1.6px solid #dee2e6 !important; }
   .card .card-text, .card .card-title {
     font-size: 16px;
     font-style: normal; }

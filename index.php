@@ -13,14 +13,20 @@ require_once 'Develop/For_Test_Develop.php';
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <title>Uroveň1</title>
+    <link rel="stylesheet" href="Access/js/ui/jquery-ui.css">
     <link rel="stylesheet" href="Access/Css/bootstrap.css">
     <link rel="stylesheet" href="Access/Css/style.css">
+
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" rel="stylesheet">
+    <script src="Access/js/ui/external/jquery/jquery.js"></script>
+    <script src="Access/js/ui/jquery-ui.js"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
 </head>
     <body>
         <!-- HEADER BACKGROUND CONTAINER -->
         <div class="container-fluid p-0">
             <div class="headerimage">
-                <img src="Media/Kategory/Architektura.jpeg" alt="Obrázok pozadia" class="rounded w-100 img-fluid">
+                <img id="headerbc" src="Media/Kategory/Architektura.jpeg" alt="Obrázok pozadia" class="rounded w-100 img-fluid">
             </div>
         </div>
         <!-- POSITION KONTAINER AND CARD KATEGORY -->
@@ -33,9 +39,9 @@ require_once 'Develop/For_Test_Develop.php';
                     <div class="mt-2">
                         <!-- IBA SOM SI POMOHOL AZ NEMUSIM VSETKO OPAKOVANE PISAT DUFAM ZE TO NEVADÍ -->
                         <?php foreach ($kategory as $kat):?>
-                        <div class="card mt-4">
-                            <img class="card-img-top rounded img-fluid" src="<?= $kat['image'];?>" alt="Kategória obrázkov">
-                            <div class="card-body">
+                        <div class="card border-0 mt-4">
+                            <img class="card-img-top" src="<?= $kat['image'];?>" alt="Kategória obrázkov <?= $kat['Name'];?>">
+                            <div class="card-body myborder">
                                 <p class="text-center bold  m-0 card-title"><?= $kat['Name'];?></p>
                                 <p class="card-text mycall text-center"></p>
                             </div>
@@ -43,7 +49,7 @@ require_once 'Develop/For_Test_Develop.php';
                         <?php endforeach;?>
                         <div class="card mt-4 card-block">
                             <div class="card-body text-center mt-5">
-                                <img src="Media/add.svg" width="40" alt="ikonka add" class="">
+                                <img src="Media/add.svg" width="40" alt="Pridať kategóriu">
                                 <p class="mt-2 text-center addkategory">PRIDAŤ KATEGÓRIU</p>
                             </div>
                         </div>
@@ -53,5 +59,21 @@ require_once 'Develop/For_Test_Develop.php';
                 <p class="myfoot mt-5">webdesign bart.sk</p>
             </div>
         </div>
+
+
+
+
+    <script>
+        animatehover();
+        /**
+         * ANIMATE BACKGROUND HOVER
+         */
+        function animatehover(){
+            $('.card-img-top').hover(function() {
+                let newImg = $(this).attr('src');
+                $('#headerbc').attr('src',newImg)
+            });
+        }
+    </script>
     </body>
 </html>
