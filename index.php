@@ -44,7 +44,7 @@ require_once 'Develop/For_Test_Develop.php';
                                 <img class="card-img-top" src="<?= $kat['image'];?>" alt="Kategória obrázkov <?= $kat['Name'];?>">
                                 <div class="card-body myborder">
                                     <p class="card-my text-center bold  m-0 card-title"><?= $kat['Name'];?></p>
-                                    <p class="card-text mycall text-center">a</p>
+                                    <p class="card-text mycall text-center">fotiek</p>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,6 @@ require_once 'Develop/For_Test_Develop.php';
                     $('#headerbc').attr('src',newImg)
                 });
             }
-
             /** CALL MY FUNCTION */
             animatehover();
         </script>
