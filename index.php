@@ -1,5 +1,3 @@
-
-
 <?php
 /** IBA POMOCKA AŽ NEMUSÍM VYPISOVAŤ VŠETKO V HTML */
 require_once 'Develop/For_Test_Develop.php';
@@ -26,7 +24,7 @@ require_once 'Develop/For_Test_Develop.php';
         <!-- HEADER BACKGROUND CONTAINER -->
         <div class="container-fluid p-0">
             <div class="headerimage">
-                <img id="headerbc" src="Media/Kategory/Architektura.jpeg" alt="Obrázok pozadia" class="rounded  img-fluid">
+                <img id="headerbc" src="Media/Kategory/Architektura.jpeg" alt="Obrázok pozadia" class="rounded img-fluid">
             </div>
         </div>
         <!-- POSITION KONTAINER AND CARD KATEGORY -->
@@ -41,7 +39,7 @@ require_once 'Develop/For_Test_Develop.php';
                         <?php foreach ($kategory as $kat):?>
                         <div id="card" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
                             <div class="card border-0 mt-4">
-                                <img class="card-img-top" src="<?= $kat['image'];?>" alt="Kategória obrázkov <?= $kat['Name'];?>">
+                                <img class="card-img-top" src="<?= $kat['image'];?>" alt="Kategória obrázkov <?= $kat['Name'];?>"/>
                                 <div class="card-body myborder">
                                     <p class="card-my text-center bold  m-0 card-title"><?= $kat['Name'];?></p>
                                     <p class="card-text mycall text-center">6 fotiek</p>
@@ -50,7 +48,7 @@ require_once 'Develop/For_Test_Develop.php';
                         </div>
                         <?php endforeach;?>
                         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
-                            <div class="card mt-4 card-block">
+                            <div class="kategorystart card mt-4 card-block">
                                 <div class="card-body text-center mt-5">
                                     <img src="Media/add.svg" width="40" alt="Pridať kategóriu">
                                     <p class="mt-2 text-center addkategory">PRIDAŤ KATEGÓRIU</p>
@@ -65,15 +63,47 @@ require_once 'Develop/For_Test_Develop.php';
         </div>
         <script>
         /** ANIMATE BACKGROUND HOVER **/
-            function animatehover(){
+        function animatehover(){
                 $('[id^="card"]').hover(function() {
                     let my = $();
                     let newImg = $('.card-img-top',this).attr('src');
                     $('#headerbc').attr('src',newImg)
                 });
             }
-            /** CALL MY FUNCTION */
-            animatehover();
+        /** DIALOG MY START AND CLOSE */
+        $(document).ready(function (){
+            $('.kategorystart').click(function (){
+                $('.start').toggle('fade',40);
+            })
+        })
+        /** CALL MY FUNCTION */
+        animatehover();
         </script>
+        <!-- BACKGROUND DARK FOR DIALOG -->
+        <div class="display-non start darked position-absolute"></div>
+        <!-- DIALOG KATEGORY -->
+        <div class="display-non start d-flex flex-row justify-content-center align-items-center">
+            <div id="dialog" class="display-non start position-absolute">
+                <div class="exit">
+                    <div class="float-right kategorystart">
+                        <img src="Media/close.svg" alt="zavrieť dialóg">
+                        <span>zavrieť</span>
+                    </div>
+                </div>
+                <div class="mydialog">
+                    <div class="p-3">
+                        <h4>pridať kategóriu</h4>
+                        <div class="myaction clearfix">
+                            <label for="kategory"></label>
+                            <input id="kategory" type="text" class="mt-2 float-left" placeholder="zadajte názov kategórie">
+                            <button type="submit" class="btn btn-mycolor float-right">
+                                <img width="10" height="10" src="Media/add_icon.svg" alt="add icon"/>
+                                pridať
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

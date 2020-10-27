@@ -7,35 +7,36 @@ $color_card: #555555;
 $font:Roboto,serif;
 $brightness:70%;
 $blur:5px;
+$btn_background:#42c78d;
+.display-non{
+  display: none;
+}
 
-body{
+body {
   font-family: $font;
   text-transform: uppercase;
 }
 
-h2,h3,.addkategory{
+h2,h3,.addkategory {
   font-style: normal;
   text-align: left;
   text-transform: uppercase;
   line-height: normal;
   letter-spacing: normal;
-
 }
 
-h2,h3{
+h2,h3 {
   color: $color_header;
   font-weight: 500;
-
 }
 
-.addkategory{
+.addkategory {
   height: 16px;
   color: $color_fot;
   font-size: 16px;
   font-weight: 700;
   line-height: 30.98px;
 }
-
 
 h2 {
   font-size: 24px;
@@ -70,10 +71,9 @@ h3{
   text-align: left;
   letter-spacing: 0.7px;
   text-transform: none;
-
 }
 
-hr{
+hr {
   height: 2px;
   background-color: $bc_color;
   opacity: 0.2;
@@ -83,7 +83,7 @@ hr{
   margin-left: 20px;
 }
 
-.card{
+.card {
   cursor: pointer;
   width: 15.5rem;
   height: 13rem;
@@ -113,10 +113,12 @@ hr{
   }
 }
 
-.card:hover{
+.card:hover {
+
   box-shadow: 1px 1px 12px rgba(33,33,33,0.1);
   bottom: 10px;
   position: relative;
+
   .card-text{
       transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
@@ -127,20 +129,96 @@ hr{
       display: block;
       color: $color_fot;
     }
-  .card-img-top{
+
+  .card-img-top {
     opacity: 0.9;
     transform: scale(1.01);
     height: 60%;
   }
 }
 
-.mycontainer{
+.mycontainer {
   top:10%;
   width:100%;
 }
 
-.mt-my{
+.mt-my {
   margin-top: 4rem !important;
+}
+
+
+
+/** BACKGROUND OPEN DIALOG **/
+.darked {
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+
+/** MY DIALOG **/
+h4 {
+  color: $color_card;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.mydialog {
+  width: 620px;
+  height: 145px;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: $color_header;
+
+  button {
+    color: $color_header;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    line-height: normal;
+  }
+
+  input {
+    width: 75%;
+    border: none;
+    padding: 0;
+    text-transform: uppercase;
+    ::placeholder{
+      width: 231px;
+      height: 16px;
+      color: $color_fot;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: left;
+      text-transform: uppercase;
+      font-style: normal;
+      letter-spacing: 0.8px;
+      line-height: normal;
+    }
+  }
+  .btn-mycolor {
+    background: $btn_background;
+  }
+}
+.exit {
+  width: 100%;
+  height: 41px;
+  color: $color_header;
+}
+
+.myaction {
+  margin-top: 2rem;
+  height: 40px;
+  border-bottom: 3px solid $bc_color;
 }
 
 
