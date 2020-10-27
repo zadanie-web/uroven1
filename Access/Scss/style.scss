@@ -172,20 +172,12 @@ h4 {
 
 .mydialog {
   width: 620px;
-  height: 145px;
+  height: 150px;
   box-shadow: 0 1px 16px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   background-color: $color_header;
 
-  button {
-    color: $color_header;
-    font-size: 16px;
-    font-weight: 500;
-    text-align: left;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    line-height: normal;
-  }
+
 
   input {
     width: 75%;
@@ -205,9 +197,7 @@ h4 {
       line-height: normal;
     }
   }
-  .btn-mycolor {
-    background: $btn_background;
-  }
+
 }
 .exit {
   width: 100%;
@@ -215,12 +205,87 @@ h4 {
   color: $color_header;
 }
 
+
+
 .myaction {
   margin-top: 2rem;
   height: 40px;
   border-bottom: 3px solid $bc_color;
 }
+/** DRAG AND DROP CSS **/
 
+.dropzone {
+  background: white;
+  border-radius: 10px;
+  border-image: none;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.btn-mycolor {
+  background: $btn_background;
+  color: $color_header;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: normal;
+}
+/** DRAG AND DROP CSS**/
+.dropzone {
+  border-image: none;
+  margin-left: auto;
+  margin-right: auto;
+  /* Style for "modal" */
+  width: 900px;
+  height: 337px;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: #ffffff;
+  h6{
+    color: #aaaaaa;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    font-style: normal;
+    letter-spacing: 0.2px;
+    font-family: "Roboto - Regular";
+    line-height: 24px;
+  }
+  small{
+    text-transform: none;
+    color: #aaaaaa;
+
+  }
+  button.select {
+    width: 213px;
+    height: 48px;
+    border-radius: 4px;
+    border: 3px solid #aaaaaa;
+    text-transform: uppercase;
+    color: #aaaaaa;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    line-height: normal;
+  }
+
+  .mydrop {
+    border: 1px dashed black;
+    border-radius: 5px;
+    padding: 30px 0 30px 0;
+
+  }
+
+}
 
 @media only screen and (max-width: 1200px) {
   .card{

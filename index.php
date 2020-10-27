@@ -38,7 +38,7 @@ require_once 'Develop/For_Test_Develop.php';
                         <!-- IBA SOM SI POMOHOL AZ NEMUSIM VSETKO OPAKOVANE PISAT DUFAM ZE TO NEVADÍ -->
                         <?php foreach ($kategory as $kat):?>
                         <div id="card" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
-                            <div class="card border-0 mt-4">
+                            <div class="card opendrop border-0 mt-4">
                                 <img class="card-img-top" src="<?= $kat['image'];?>" alt="Kategória obrázkov <?= $kat['Name'];?>"/>
                                 <div class="card-body myborder">
                                     <p class="card-my text-center bold  m-0 card-title"><?= $kat['Name'];?></p>
@@ -65,7 +65,6 @@ require_once 'Develop/For_Test_Develop.php';
         /** ANIMATE BACKGROUND HOVER **/
         function animatehover(){
                 $('[id^="card"]').hover(function() {
-                    let my = $();
                     let newImg = $('.card-img-top',this).attr('src');
                     $('#headerbc').attr('src',newImg)
                 });
@@ -75,12 +74,18 @@ require_once 'Develop/For_Test_Develop.php';
             $('.kategorystart').click(function (){
                 $('.start').toggle('fade',40);
             })
+
+            $('.opendrop').click(function (){
+                $('.startdrop').toggle('fade',40);
+            })
         })
+
+
         /** CALL MY FUNCTION */
         animatehover();
         </script>
         <!-- BACKGROUND DARK FOR DIALOG -->
-        <div class="display-non start darked position-absolute"></div>
+        <div class="display-non startdrop start darked position-absolute"></div>
         <!-- DIALOG KATEGORY -->
         <div class="display-non start d-flex flex-row justify-content-center align-items-center">
             <div id="dialog" class="display-non start position-absolute">
@@ -105,5 +110,96 @@ require_once 'Develop/For_Test_Develop.php';
                 </div>
             </div>
         </div>
+        <!-- DRAG AND DROP -->
+        <section class="display-non  d-flex flex-row justify-content-center  align-items-center">
+            <div id="dropzone" class="display-non startdrop  position-absolute">
+                <div class="exit">
+                    <div class="float-right opendrop">
+                        <img src="Media/close.svg" alt="zavrieť drop">
+                        <span>zavrieť</span>
+                    </div>
+                </div>
+                <form class="dropzone needsclick" id="dupload" action="/" method="POST" enctype="multipart/form-data">
+                    <div class="dz-message m-0 p-0 needsclick">
+                            <h4 class="m-0 p-0">pridať fotky</h4>
+                        <span class="note needsclick"></span>
+                        <div class="w-100 mydrop mt-3 h-50">
+                            <img src="Media/fot.svg" alt="Pridať obrázok/y">
+                            <h6 class="m-0">sem presunte fotky</h6>
+                            <small>alebo</small><br>
+                            <button type="button" class="btn select">vyberte subor</button>
+                        </div>
+                        <button type="submit" class="btn btn-mycolor mt-3 float-right">
+                            <img width="10" height="10" src="Media/add_icon.svg" alt="add icon"/>
+                            pridať
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <script>
+
+            let dropzone = new Dropzone('#dupload', {
+                previewTemplate: document.querySelector('#preview-template').innerHTML,
+                parallelUploads: 2,
+                thumbnailHeight: 120,
+                thumbnailWidth: 120,
+                maxFilesize: 3,
+                filesizeBase: 1000,
+                thumbnail: function(file, dataUrl) {
+                    if (file.previewElement) {
+                        file.previewElement.classList.remove("dz-file-preview");
+                        let images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+                        for (let i = 0; i < images.length; i++) {
+                            let thumbnailElement = images[i];
+                            thumbnailElement.alt = file.name;
+                            thumbnailElement.src = dataUrl;
+                        }
+                        setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+                    }
+                }
+
+            });
+
+
+
+            let minSteps = 6,
+                maxSteps = 60,
+                timeBetweenSteps = 100,
+                bytesPerStep = 100000;
+
+            dropzone.uploadFiles = function(files) {
+                let self = this;
+
+                let totalSteps;
+                for (let i = 0; i < files.length; i++) {
+
+                    let file = files[i];
+                    totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+
+                    for (let step = 0; step < totalSteps; step++) {
+                        let duration = timeBetweenSteps * (step + 1);
+                        setTimeout(function (file, totalSteps, step) {
+                            return function () {
+                                file.upload = {
+                                    progress: 100 * (step + 1) / totalSteps,
+                                    total: file.size,
+                                    bytesSent: (step + 1) * file.size / totalSteps
+                                };
+
+                                self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
+                                if (file.upload.progress === 100) {
+                                    file.status = Dropzone.SUCCESS;
+                                    self.emit("success", file, 'success', null);
+                                    self.emit("complete", file);
+                                    self.processQueue();
+                                    document.getElementsByClassName("dz-success-mark").style.opacity = "1";
+                                }
+                            };
+                        }(file, totalSteps, step), duration);
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
