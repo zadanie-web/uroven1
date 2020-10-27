@@ -26,7 +26,7 @@ require_once 'Develop/For_Test_Develop.php';
         <!-- HEADER BACKGROUND CONTAINER -->
         <div class="container-fluid p-0">
             <div class="headerimage">
-                <img id="headerbc" src="Media/Kategory/Architektura.jpeg" alt="Obrázok pozadia" class="rounded w-100 img-fluid">
+                <img id="headerbc" src="Media/Kategory/Architektura.jpeg" alt="Obrázok pozadia" class="rounded  img-fluid">
             </div>
         </div>
         <!-- POSITION KONTAINER AND CARD KATEGORY -->
@@ -39,16 +39,15 @@ require_once 'Develop/For_Test_Develop.php';
                     <div class="mt-2">
                         <!-- IBA SOM SI POMOHOL AZ NEMUSIM VSETKO OPAKOVANE PISAT DUFAM ZE TO NEVADÍ -->
                         <?php foreach ($kategory as $kat):?>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
-                        <div class="card border-0 mt-4">
-                            <img class="card-img-top" src="<?= $kat['image'];?>" alt="Kategória obrázkov <?= $kat['Name'];?>">
-                            <div class="card-body myborder">
-                                <p class="text-center bold  m-0 card-title"><?= $kat['Name'];?></p>
-                                <p class="card-text mycall text-center"></p>
+                        <div id="card" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
+                            <div class="card border-0 mt-4">
+                                <img class="card-img-top" src="<?= $kat['image'];?>" alt="Kategória obrázkov <?= $kat['Name'];?>">
+                                <div class="card-body myborder">
+                                    <p class="card-my text-center bold  m-0 card-title"><?= $kat['Name'];?></p>
+                                    <p class="card-text mycall text-center">a</p>
+                                </div>
                             </div>
                         </div>
-                        </div>
-
                         <?php endforeach;?>
                         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
                             <div class="card mt-4 card-block">
@@ -67,8 +66,9 @@ require_once 'Develop/For_Test_Develop.php';
         <script>
         /** ANIMATE BACKGROUND HOVER **/
             function animatehover(){
-                $('.card-img-top').hover(function() {
-                    let newImg = $(this).attr('src');
+                $('[id^="card"]').hover(function() {
+                    let my = $();
+                    let newImg = $('.card-img-top',this).attr('src');
                     $('#headerbc').attr('src',newImg)
                 });
             }

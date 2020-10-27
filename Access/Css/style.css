@@ -1,7 +1,8 @@
 /** SETTING: COLOR ,BACKGROUND .FONT ,BRIGHTNESS ,BLUR  */
 /** BRIGHTNESS AND BLUR FOR HEADER BACKGROUND IMG */
 body {
-  font-family: Roboto, serif; }
+  font-family: Roboto, serif;
+  text-transform: uppercase; }
 
 h2, h3, .addkategory {
   font-style: normal;
@@ -35,6 +36,7 @@ h3 {
   height: 338px;
   filter: brightness(70%); }
   .headerimage img {
+    width: 100%;
     height: 100%;
     filter: blur(5px); }
 
@@ -45,7 +47,8 @@ h3 {
   font-style: normal;
   line-height: 30.98px;
   text-align: left;
-  letter-spacing: 0.7px; }
+  letter-spacing: 0.7px;
+  text-transform: none; }
 
 hr {
   height: 2px;
@@ -61,6 +64,9 @@ hr {
   height: 13rem;
   background-color: #ffffff;
   color: #555555; }
+  .card .card-text {
+    text-transform: none;
+    display: none; }
   .card .card-img-top {
     height: 70%; }
   .card .card-body.myborder {
@@ -70,6 +76,23 @@ hr {
     font-style: normal; }
   .card .card-title {
     font-weight: 600; }
+
+.card:hover {
+  box-shadow: 0 0 2px #333333;
+  bottom: 10px;
+  position: relative; }
+  .card:hover .card-text {
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    opacity: 1;
+    display: block; }
+  .card:hover .card-img-top {
+    opacity: 0.9;
+    transform: scale(1.01);
+    height: 60%; }
 
 .mycontainer {
   top: 10%;
