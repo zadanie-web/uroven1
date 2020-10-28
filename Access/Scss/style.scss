@@ -1,15 +1,23 @@
 /** SETTING: COLOR ,BACKGROUND .FONT ,BRIGHTNESS ,BLUR  */
 /** BRIGHTNESS AND BLUR FOR HEADER BACKGROUND IMG */
-$ff:  #ffffff;
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/Roboto-Medium.ttf');
+}
+$ff: #ffffff;
 $aa: #aaaaaa;
 $ee: #eeeeee;
 $SS: #555555;
-$font:Roboto,serif;
+$font:Roboto;
 $brightness:70%;
 $blur:5px;
 $btn_background:#42c78d;
 .display-non{
   display: none;
+}
+.cursor-p{
+  cursor: pointer;
 }
 
 body {
@@ -62,7 +70,7 @@ h3{
   }
 }
 
-.myfoot{
+.myfoot {
   color: $aa;
   font-size: 14px;
   font-weight: 500;
@@ -114,11 +122,9 @@ hr {
 }
 
 .card:hover {
-
   box-shadow: 1px 1px 12px rgba(33,33,33,0.1);
   bottom: 10px;
   position: relative;
-
   .card-text{
       transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
@@ -145,6 +151,7 @@ hr {
 .mt-my {
   margin-top: 4rem !important;
 }
+
 
 
 
@@ -177,14 +184,12 @@ h4 {
   border-radius: 4px;
   background-color: $ff;
 
-
-
   input {
     width: 75%;
     border: none;
     padding: 0;
     text-transform: uppercase;
-    ::placeholder{
+    ::placeholder {
       width: 231px;
       height: 16px;
       color: $aa;
@@ -212,6 +217,7 @@ h4 {
   height: 40px;
   border-bottom: 3px solid $ee;
 }
+
 /** DRAG AND DROP CSS **/
 
 .dropzone {
@@ -240,7 +246,6 @@ h4 {
   border-image: none;
   margin-left: auto;
   margin-right: auto;
-  /* Style for "modal" */
   width: 900px;
   height: 337px;
   box-shadow: 0 1px 16px rgba(0, 0, 0, 0.15);

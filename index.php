@@ -24,7 +24,7 @@ require_once 'Develop/For_Test_Develop.php';
         <!-- HEADER BACKGROUND CONTAINER -->
         <div class="container-fluid p-0">
             <div class="headerimage">
-                <img id="headerbc" src="Media/Kategory/Architektura.jpeg" alt="Obrázok pozadia" class="rounded img-fluid">
+                <img id="headerbc" src="Media/Kategory/Architektura.png" alt="Obrázok pozadia" class="rounded img-fluid">
             </div>
         </div>
         <!-- POSITION KONTAINER AND CARD KATEGORY -->
@@ -65,7 +65,7 @@ require_once 'Develop/For_Test_Develop.php';
         <div id="galerry" class="display-non position-absolute mycontainer">
             <div class="container">
                 <h2>FOTOGALÉRIA</h2>
-                <h3 class="mt-my back-galery"><img src="Media/back.svg" class="mr-3" alt="back"> architektúra</h3>
+                <h3 class="mt-my cursor-p back-galery"><img src="Media/back.svg" class="mr-3" alt="back"> architektúra</h3>
                 <hr>
                 <div class="card-deck clearfix">
                     <div class="mt-2">
