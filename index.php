@@ -1,7 +1,16 @@
 <?php
 /** IBA POMOCKA AŽ NEMUSÍM VYPISOVAŤ VŠETKO V HTML */
 require_once 'Develop/For_Test_Develop.php';
+
+
+/**
+ * BOOTSTRAP ROZSIRENIE POUZITE CLASS
+ * col-rt-4 col-4k-5 col-8k-6
+ * Nemám to ako odskúšať najväčšie rozlíšenie ktoré mám je cca polovica s 5K .
+ */
 ?>
+
+
 <!DOCTYPE html>
 <html lang="sk">
 <head>
@@ -14,7 +23,7 @@ require_once 'Develop/For_Test_Develop.php';
     <link rel="stylesheet" href="Access/js/ui/jquery-ui.css">
     <link rel="stylesheet" href="Access/Css/bootstrap.css">
     <link rel="stylesheet" href="Access/Css/style.css">
-
+    <link rel="stylesheet" href="Access/Css/bower_components/bootstrap-big-grid/dist/css/bootstrap-big-grid.min.css"/>
     <link  href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" rel="stylesheet">
     <script src="Access/js/ui/external/jquery/jquery.js"></script>
     <script src="Access/js/ui/jquery-ui.js"></script>
@@ -37,7 +46,7 @@ require_once 'Develop/For_Test_Develop.php';
                     <div class="mt-2">
                         <!-- IBA SOM SI POMOHOL AZ NEMUSIM VSETKO OPAKOVANE PISAT DUFAM ZE TO NEVADÍ -->
                         <?php foreach ($kategory as $kat):?>
-                        <div id="card" class="start-galery col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
+                        <div id="card" class="start-galery col-lg-3 col-md-4 col-sm-6 col-xs-12 col-rt-4 col-4k-5 col-8k-6 float-left p-0 m-0">
                             <div class="card border-0 mt-4">
                                 <img class="card-img-top" src="<?= $kat['image'];?>" alt="Kategória obrázkov <?= $kat['Name'];?>"/>
                                 <div class="card-body myborder">
@@ -47,7 +56,7 @@ require_once 'Develop/For_Test_Develop.php';
                             </div>
                         </div>
                         <?php endforeach;?>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-rt-4 col-4k-5 col-8k-6 float-left p-0 m-0">
                             <div class="kategorystart card mt-4 card-block">
                                 <div class="card-body text-center mt-5">
                                     <img src="Media/add.svg" width="40" alt="Pridať kategóriu">
@@ -71,13 +80,13 @@ require_once 'Develop/For_Test_Develop.php';
                     <div class="mt-2">
                         <!-- IBA SOM SI POMOHOL AZ NEMUSIM VSETKO OPAKOVANE PISAT DUFAM ZE TO NEVADÍ -->
                         <?php foreach ($Galerry as $kat):?>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-rt-4 col-4k-5 col-8k-6 float-left p-0 m-0">
                                 <div class="card border-0 mt-4">
                                     <img class="card-img-top h-100" src="<?= $kat['image'];?>" alt="Kategória obrázkov <?= $kat['Name'];?>"/>
                                 </div>
                             </div>
                         <?php endforeach;?>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left p-0 m-0">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-rt-4 col-4k-5 col-8k-6 float-left p-0 m-0">
                             <div class="opendrop card mt-4 card-block">
                                 <div class="card-body text-center mt-5">
                                     <img src="Media/fot.svg" width="40" alt="Pridať kategóriu">
