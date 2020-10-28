@@ -20,11 +20,14 @@ require_once 'Develop/For_Test_Develop.php';
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <title>Uroveň1</title>
+    <!-- TEST BOOTSTRAP 8K -->
+    <link rel="stylesheet" href="Access/Css/bower_components/bootstrap-big-grid/dist/css/bootstrap-big-grid.min.css"/>
+    <!-- CSS -->
     <link rel="stylesheet" href="Access/js/ui/jquery-ui.css">
     <link rel="stylesheet" href="Access/Css/bootstrap.css">
     <link rel="stylesheet" href="Access/Css/style.css">
-    <link rel="stylesheet" href="Access/Css/bower_components/bootstrap-big-grid/dist/css/bootstrap-big-grid.min.css"/>
     <link  href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" rel="stylesheet">
+    <!-- SCRIPT -->
     <script src="Access/js/ui/external/jquery/jquery.js"></script>
     <script src="Access/js/ui/jquery-ui.js"></script>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
@@ -70,7 +73,7 @@ require_once 'Develop/For_Test_Develop.php';
                 <p class="myfoot mt-5">webdesign bart.sk</p>
             </div>
         </div>
-
+        <!-- CONTAINER FOR GALLERY -->
         <div id="galerry" class="display-non position-absolute mycontainer">
             <div class="container">
                 <h2>FOTOGALÉRIA</h2>
@@ -101,6 +104,7 @@ require_once 'Develop/For_Test_Develop.php';
             </div>
         </div>
 
+        <!-- SCRIPT FOR ANIMATE BC + ANIMATE PAGE GALLERY -->
         <script>
         /** ANIMATE BACKGROUND HOVER **/
         function animatehover(){
@@ -121,22 +125,23 @@ require_once 'Develop/For_Test_Develop.php';
 
             $('.start-galery').click(function (){
                 $('#kategory').toggle('fade',100);
-                $('#galerry').toggle('fade',200);
+                $('#galerry').delay(200).toggle('fade',200);
             })
 
             $('.back-galery').click(function (){
                 $('#galerry').toggle('fade',100);
-                $('#kategory').toggle('fade',200);
+                $('#kategory').delay(200).toggle('fade',200);
             })
         })
-
 
         /** CALL MY FUNCTION */
         animatehover();
         </script>
+
         <!-- BACKGROUND DARK FOR DIALOG -->
         <div class="display-non startdrop start darked position-absolute"></div>
-        <!-- DIALOG KATEGORY -->
+
+        <!-- DIALOG ADD KATEGORY  -->
         <div class="display-non start d-flex flex-row justify-content-center align-items-center">
             <div id="dialog" class="display-non start position-absolute ">
                 <div class="exit">
@@ -145,7 +150,6 @@ require_once 'Develop/For_Test_Develop.php';
                         <span>zavrieť</span>
                     </div>
                 </div>
-
                 <div class="mydialog">
                     <div class="p-3">
                         <h4>pridať kategóriu</h4>
@@ -189,8 +193,9 @@ require_once 'Develop/For_Test_Develop.php';
                 </form>
             </div>
         </section>
-        <script>
 
+        <!-- SCRIPT FOR DRAG AND DROP -->
+        <script>
             let dropzone = new Dropzone('#dupload', {
                 previewTemplate: document.querySelector('#preview-template').innerHTML,
                 parallelUploads: 2,
