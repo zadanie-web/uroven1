@@ -22,7 +22,6 @@ require_once 'Develop/For_Test_Develop.php';
     <!-- TEST BOOTSTRAP 8K -->
     <link rel="stylesheet" href="Access/Css/bower_components/bootstrap-big-grid/dist/css/bootstrap-big-grid.min.css"/>
     <link  href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" rel="stylesheet">
-
     <!-- CSS -->
     <link rel="stylesheet" href="Access/js/ui/jquery-ui.css">
     <link rel="stylesheet" href="Access/Css/bootstrap.css">
@@ -135,7 +134,7 @@ require_once 'Develop/For_Test_Develop.php';
 
         <!-- DRAG AND DROP -->
         <div class="display-non d-flex flex-row justify-content-center align-items-center">
-            <div id="dropzone" class="display-non startdrop  position-absolute">
+            <div id="dropzone" class="clearfix display-non startdrop  position-absolute">
                 <div class="exit">
                     <div class="float-right opendrop">
                         <img src="Media/close.svg" alt="zavrieť drop">

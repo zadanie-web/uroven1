@@ -12,6 +12,20 @@
 .cursor-p {
   cursor: pointer; }
 
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Roboto;
+  text-transform: uppercase; }
+
+/** BACKGROUND OPEN DIALOG */
+.darked {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); }
+
 h2, h3, .addkategory {
   font-style: normal;
   text-align: left;
@@ -32,6 +46,10 @@ h3 {
   font-weight: 550;
   font-size: 16px;
   letter-spacing: 0.8px; }
+
+/** FOR h3 **/
+.mt-my {
+  margin-top: 4rem !important; }
 
 h4 {
   color: #555555;
@@ -83,6 +101,13 @@ h4 {
     opacity: 0.9;
     transform: scale(1.01);
     height: 60%; }
+
+.addkategory {
+  height: 16px;
+  color: #aaaaaa;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 30.98px; }
 
 /** MY DIALOG */
 #dialog {
@@ -234,13 +259,6 @@ h4 {
 img[data-hidden="true"] {
   display: none; }
 
-.addkategory {
-  height: 16px;
-  color: #aaaaaa;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 30.98px; }
-
 .headerimage {
   height: 338px;
   filter: brightness(70%); }
@@ -250,6 +268,16 @@ img[data-hidden="true"] {
     filter: blur(5px);
     object-fit: cover; }
 
+/** POSITION CONTAINER FOR CARD **/
+.mycontainer {
+  top: 10%;
+  width: 100%; }
+
+hr {
+  height: 2px;
+  background-color: #eeeeee;
+  opacity: 0.2; }
+
 .myfoot {
   color: #aaaaaa;
   font-size: 14px;
@@ -257,26 +285,6 @@ img[data-hidden="true"] {
   line-height: 30.98px;
   letter-spacing: 0.7px;
   text-transform: none; }
-
-hr {
-  height: 2px;
-  background-color: #eeeeee;
-  opacity: 0.2; }
-
-.mycontainer {
-  top: 10%;
-  width: 100%; }
-
-.mt-my {
-  margin-top: 4rem !important; }
-
-/** BACKGROUND OPEN DIALOG */
-.darked {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7); }
 
 @media only screen and (max-width: 1200px) {
   .card {
