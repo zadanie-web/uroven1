@@ -1,7 +1,5 @@
-/** SETTING: COLOR ,BACKGROUND .FONT ,BRIGHTNESS ,BLUR  */
-/** BRIGHTNESS AND BLUR FOR HEADER BACKGROUND IMG */
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   src: url("../fonts/Roboto-Medium.ttf"); }
 
 @font-face {
@@ -14,10 +12,6 @@
 .cursor-p {
   cursor: pointer; }
 
-body {
-  font-family: Roboto;
-  text-transform: uppercase; }
-
 h2, h3, .addkategory {
   font-style: normal;
   text-align: left;
@@ -29,13 +23,6 @@ h2, h3 {
   color: #ffffff;
   font-weight: 500; }
 
-.addkategory {
-  height: 16px;
-  color: #aaaaaa;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 30.98px; }
-
 h2 {
   font-size: 24px;
   letter-spacing: 1.2px;
@@ -46,27 +33,15 @@ h3 {
   font-size: 16px;
   letter-spacing: 0.8px; }
 
-.headerimage {
-  height: 338px;
-  filter: brightness(70%); }
-  .headerimage img {
-    width: 100%;
-    height: 100%;
-    filter: blur(5px);
-    object-fit: cover; }
-
-.myfoot {
-  color: #aaaaaa;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 30.98px;
-  letter-spacing: 0.7px;
-  text-transform: none; }
-
-hr {
-  height: 2px;
-  background-color: #eeeeee;
-  opacity: 0.2; }
+h4 {
+  color: #555555;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0; }
 
 .card-deck .card {
   margin-left: 20px; }
@@ -91,11 +66,11 @@ hr {
   .card .card-title {
     font-weight: 500; }
 
-.card:hover {
+.card:hover, card:focus {
   box-shadow: 1px 1px 12px rgba(33, 33, 33, 0.1);
   bottom: 10px;
   position: relative; }
-  .card:hover .card-text {
+  .card:hover .card-text, card:focus .card-text {
     transform: translate(0px, 0px);
     -webkit-transform: translate(0px, 0px);
     -moz-transform: translate(0px, 0px);
@@ -104,37 +79,12 @@ hr {
     opacity: 1;
     display: block;
     color: #aaaaaa; }
-  .card:hover .card-img-top {
+  .card:hover .card-img-top, card:focus .card-img-top {
     opacity: 0.9;
     transform: scale(1.01);
     height: 60%; }
 
-.mycontainer {
-  top: 10%;
-  width: 100%; }
-
-.mt-my {
-  margin-top: 4rem !important; }
-
-/** BACKGROUND OPEN DIALOG **/
-.darked {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7); }
-
-/** MY DIALOG **/
-h4 {
-  color: #555555;
-  font-size: 24px;
-  font-weight: 600;
-  font-style: normal;
-  text-align: left;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 0; }
-
+/** MY DIALOG */
 #dialog {
   width: 40%; }
 
@@ -171,15 +121,7 @@ h4 {
   height: 40px;
   border-bottom: 3px solid #eeeeee; }
 
-/** DRAG AND DROP CSS **/
-.dropzone {
-  background: white;
-  border-radius: 10px;
-  border-image: none;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto; }
-
+/** DRAG AND DROP CSS */
 .btn-mycolor {
   background: #42c78d;
   color: #ffffff;
@@ -189,9 +131,10 @@ h4 {
   letter-spacing: 0.8px;
   line-height: normal; }
 
-/** DRAG AND DROP CSS**/
+/** DRAG AND DROP CSS* */
 .dropzone {
   border-image: none;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   width: 900px;
@@ -228,6 +171,112 @@ h4 {
     border: 1px dashed black;
     border-radius: 5px;
     padding: 30px 0 30px 0; }
+
+/** FOR GALLERY */
+.single-gallery {
+  width: 100%;
+  min-width: 80%;
+  overflow: hidden;
+  position: relative;
+  margin-top: -15%;
+  height: 90%; }
+
+.mySlideShow {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  height: 90%; }
+
+.exit-gallery {
+  height: 30px;
+  width: 80%;
+  margin: 0 auto; }
+
+.mynavexit {
+  position: relative;
+  right: 0; }
+
+.ex {
+  float: right;
+  color: #ffffff; }
+
+.mywidth {
+  width: 80%;
+  margin: 0 auto;
+  position: relative; }
+
+.cycle-slideshow img {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+#single-pager a img {
+  width: 49.3px !important;
+  height: 49.3px !important;
+  border: 1px solid #fff; }
+
+#single-pager a.cycle-pager-active img {
+  opacity: 0.4; }
+
+#single-left,
+#single-right {
+  position: absolute;
+  top: 50%;
+  z-index: 1000;
+  cursor: pointer; }
+
+#single-left {
+  left: 4%; }
+
+#single-right {
+  right: 4%; }
+
+img[data-hidden="true"] {
+  display: none; }
+
+.addkategory {
+  height: 16px;
+  color: #aaaaaa;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 30.98px; }
+
+.headerimage {
+  height: 338px;
+  filter: brightness(70%); }
+  .headerimage img {
+    width: 100%;
+    height: 100%;
+    filter: blur(5px);
+    object-fit: cover; }
+
+.myfoot {
+  color: #aaaaaa;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 30.98px;
+  letter-spacing: 0.7px;
+  text-transform: none; }
+
+hr {
+  height: 2px;
+  background-color: #eeeeee;
+  opacity: 0.2; }
+
+.mycontainer {
+  top: 10%;
+  width: 100%; }
+
+.mt-my {
+  margin-top: 4rem !important; }
+
+/** BACKGROUND OPEN DIALOG */
+.darked {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); }
 
 @media only screen and (max-width: 1200px) {
   .card {

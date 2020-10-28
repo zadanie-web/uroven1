@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Roboto - Regular";
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+
+
+.display-non {
+  display: none;
+}
+
+.cursor-p {
+  cursor: pointer;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: $font;
+  text-transform: uppercase;
+}

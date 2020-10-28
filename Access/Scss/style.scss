@@ -1,55 +1,10 @@
-/** SETTING: COLOR ,BACKGROUND .FONT ,BRIGHTNESS ,BLUR  */
-/** BRIGHTNESS AND BLUR FOR HEADER BACKGROUND IMG */
-
-@font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/Roboto-Medium.ttf');
-}
-
-@font-face {
-  font-family: "Roboto - Regular";
-  src: url("../fonts/Roboto-Regular.ttf");
-}
-
-$ff: #ffffff;
-$aa: #aaaaaa;
-$ee: #eeeeee;
-$SS: #555555;
-$font:Roboto;
-$brightness:70%;
-$blur:5px;
-$btn_background:#42c78d;
-
-.display-non{
-  display: none;
-}
-
-
-.cursor-p{
-  cursor: pointer;
-}
-
-
-body {
-  font-family: $font;
-  text-transform: uppercase;
-}
-
-
-h2,h3,.addkategory {
-  font-style: normal;
-  text-align: left;
-  text-transform: uppercase;
-  line-height: normal;
-  letter-spacing: normal;
-}
-
-
-h2,h3 {
-  color: $ff;
-  font-weight: 500;
-}
-
+@import "variabeles"; // premenné (farby atd)
+@import "generals";   // generals
+@import "typography"; // Font h2,h3,h4
+@import "card";       // Card
+@import "dialog";     // My dialog
+@import "drag&drop";  // Drag&Drop
+@import "gallery";    // My Gallery
 
 .addkategory {
   height: 16px;
@@ -57,20 +12,6 @@ h2,h3 {
   font-size: 16px;
   font-weight: 700;
   line-height: 30.98px;
-}
-
-
-h2 {
-  font-size: 24px;
-  letter-spacing:1.2px;
-  font-weight: 700;
-}
-
-
-h3 {
-  font-weight: 550;
-  font-size: 16px;
-  letter-spacing: 0.8px;
 }
 
 .headerimage {
@@ -83,7 +24,6 @@ h3 {
     filter: blur($blur);
     object-fit: cover;
   }
-
 }
 
 .myfoot {
@@ -95,240 +35,29 @@ h3 {
   text-transform: none;
 }
 
-
-
 hr {
   height: 2px;
   background-color: $ee;
   opacity: 0.2;
 }
 
-
-
-.card-deck .card {
-  margin-left: 20px;
-}
-
-
-
-.card {
-  cursor: pointer;
-  width: 15.5rem;
-  height: 13rem;
-  background-color: #ffffff;
-  color: $SS;
-  margin: 0;
-
-  .card-text {
-    text-transform: none;
-    display: none;
-  }
-
-  .card-img-top {
-    height: 70%;
-  }
-
-  .card-body.myborder {
-    border: 1.6px solid #dee2e6 !important;;
-  }
-
-  .card-text,.card-title {
-    font-size: 16px;
-    font-style: normal;
-  }
-
-  .card-title {
-    font-weight: 500;
-  }
-
-}
-
-
-
-
-.card:hover {
-  box-shadow: 1px 1px 12px rgba(33,33,33,0.1);
-  bottom: 10px;
-  position: relative;
-
-  .card-text {
-      transform: translate(0px, 0px);
-      -webkit-transform: translate(0px, 0px);
-      -moz-transform: translate(0px, 0px);
-      -o-transform: translate(0px, 0px);
-      -ms-transform: translate(0px, 0px);
-      opacity: 1;
-      display: block;
-      color: $aa;
-    }
-
-  .card-img-top {
-    opacity: 0.9;
-    transform: scale(1.01);
-    height: 60%;
-  }
-
-}
-
-
-
-
 .mycontainer {
-  top:10%;
-  width:100%;
+  top: 10%;
+  width: 100%;
 }
-
-
 
 .mt-my {
   margin-top: 4rem !important;
 }
 
-
-
-/** BACKGROUND OPEN DIALOG **/
+/** BACKGROUND OPEN DIALOG */
 .darked {
-  top:0;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
-
-
-/** MY DIALOG **/
-h4 {
-  color: $SS;
-  font-size: 24px;
-  font-weight: 600;
-  font-style: normal;
-  text-align: left;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 0;
-}
-
-
-#dialog{
-  width: 40%;
-}
-
-
-.mydialog {
-  width: auto;
-  height: 150px;
-  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  background-color: $ff;
-
-  input {
-    width: 75%;
-    border: none;
-    padding: 0;
-    text-transform: uppercase;
-    ::placeholder {
-      width: 231px;
-      height: 16px;
-      color: $aa;
-      font-size: 16px;
-      font-weight: 500;
-      text-align: left;
-      text-transform: uppercase;
-      font-style: normal;
-      letter-spacing: 0.8px;
-      line-height: normal;
-    }
-  }
-
-}
-
-
-.exit {
-  width: 100%;
-  height: 41px;
-  color: $ff;
-}
-
-
-
-.myaction {
-  margin-top: 2rem;
-  height: 40px;
-  border-bottom: 3px solid $ee;
-}
-
-
-/** DRAG AND DROP CSS **/
-.dropzone {
-  background: white;
-  border-radius: 10px;
-  border-image: none;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-.btn-mycolor {
-  background: $btn_background;
-  color: $ff;
-  font-size: 16px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  line-height: normal;
-}
-
-
-/** DRAG AND DROP CSS**/
-.dropzone {
-  border-image: none;
-  margin-left: auto;
-  margin-right: auto;
-  width: 900px;
-  height: 337px;
-  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  background-color: $ff;
-  h6 {
-    color: $aa;
-    font-size: 12px;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    font-style: normal;
-    letter-spacing: 0.2px;
-    font-family: "Roboto - Regular";
-    line-height: 24px;
-  }
-
-  small {
-    text-transform: none;
-    color: $aa;
-  }
-
-  button.select {
-    width: 213px;
-    height: 48px;
-    border-radius: 4px;
-    border: 3px solid $aa;
-    color: $aa;
-    font-size: 16px;
-    font-weight: 500;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    line-height: normal;
-  }
-
-  .mydrop {
-    border: 1px dashed black;
-    border-radius: 5px;
-    padding: 30px 0 30px 0;
-  }
-
-}
-
 
 
 @media only screen and (max-width: 1200px) {
@@ -337,8 +66,6 @@ h4 {
     height: 11rem;
   }
 }
-
-
 
 @media only screen and (max-width: 576px) {
   .card {
@@ -358,10 +85,7 @@ h4 {
       width: 100%;
     }
   }
-
 }
-
-
 
 @media only screen and (max-width: 1240px) {
   #dialog {
@@ -369,14 +93,12 @@ h4 {
   }
 }
 
-
-
 @media only screen and (max-width: 620px) {
   #dialog {
     width: 90%;
+
     input {
       width: 65%;
     }
   }
-
 }

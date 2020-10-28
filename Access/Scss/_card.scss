@@ -1,0 +1,57 @@
+.card-deck .card {
+  margin-left: 20px;
+}
+
+.card {
+  cursor: pointer;
+  width: 15.5rem;
+  height: 13rem;
+  background-color: #ffffff;
+  color: $SS;
+  margin: 0;
+
+  .card-text {
+    text-transform: none;
+    display: none;
+  }
+
+  .card-img-top {
+    height: 70%;
+  }
+
+  .card-body.myborder {
+    border: 1.6px solid #dee2e6 !important;
+  }
+
+  .card-text, .card-title {
+    font-size: 16px;
+    font-style: normal;
+  }
+
+  .card-title {
+    font-weight: 500;
+  }
+}
+
+.card:hover, card:focus {
+  box-shadow: 1px 1px 12px rgba(33, 33, 33, 0.1);
+  bottom: 10px;
+  position: relative;
+
+  .card-text {
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    opacity: 1;
+    display: block;
+    color: $aa;
+  }
+
+  .card-img-top {
+    opacity: 0.9;
+    transform: scale(1.01);
+    height: 60%;
+  }
+}

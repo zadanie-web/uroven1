@@ -1,0 +1,35 @@
+h2, h3, .addkategory {
+  font-style: normal;
+  text-align: left;
+  text-transform: uppercase;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+h2, h3 {
+  color: $ff;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 24px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 550;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+}
+
+h4 {
+  color: $SS;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}

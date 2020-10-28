@@ -1,0 +1,74 @@
+/** FOR GALLERY */
+.single-gallery {
+  width: 100%;
+  min-width: 80%;
+  overflow: hidden;
+  position: relative;
+  margin-top: -15%;
+  height: 90%;
+}
+
+.mySlideShow {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  height: 90%;
+}
+
+.exit-gallery {
+  height: 30px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.mynavexit {
+  position: relative;
+  right: 0;
+}
+
+.ex {
+  float: right;
+  color: $ff;
+}
+
+.mywidth {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.cycle-slideshow img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#single-pager a img {
+  width: 49.3px !important;
+  height: 49.3px !important;
+  border: 1px solid #fff;
+}
+
+#single-pager a.cycle-pager-active img {
+  opacity: 0.4;
+}
+
+#single-left,
+#single-right {
+  position: absolute;
+  top: 50%;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+#single-left {
+  left: 4%;
+}
+
+#single-right {
+  right: 4%;
+}
+
+img[data-hidden="true"] {
+  display: none;
+}
