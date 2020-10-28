@@ -5,6 +5,12 @@
   font-family: 'Roboto';
   src: url('../fonts/Roboto-Medium.ttf');
 }
+
+@font-face {
+  font-family: "Roboto - Regular";
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+
 $ff: #ffffff;
 $aa: #aaaaaa;
 $ee: #eeeeee;
@@ -13,17 +19,22 @@ $font:Roboto;
 $brightness:70%;
 $blur:5px;
 $btn_background:#42c78d;
+
 .display-non{
   display: none;
 }
+
+
 .cursor-p{
   cursor: pointer;
 }
+
 
 body {
   font-family: $font;
   text-transform: uppercase;
 }
+
 
 h2,h3,.addkategory {
   font-style: normal;
@@ -33,10 +44,12 @@ h2,h3,.addkategory {
   letter-spacing: normal;
 }
 
+
 h2,h3 {
   color: $ff;
   font-weight: 500;
 }
+
 
 .addkategory {
   height: 16px;
@@ -46,40 +59,43 @@ h2,h3 {
   line-height: 30.98px;
 }
 
+
 h2 {
   font-size: 24px;
   letter-spacing:1.2px;
   font-weight: 700;
 }
 
-h3{
+
+h3 {
   font-weight: 550;
   font-size: 16px;
   letter-spacing: 0.8px;
 }
 
-.headerimage{
+.headerimage {
   height: 338px;
   filter: brightness($brightness);
 
-  img{
+  img {
     width: 100%;
     height: 100%;
     filter: blur($blur);
     object-fit: cover;
   }
+
 }
 
 .myfoot {
   color: $aa;
   font-size: 14px;
   font-weight: 500;
-  font-style: normal;
   line-height: 30.98px;
-  text-align: left;
   letter-spacing: 0.7px;
   text-transform: none;
 }
+
+
 
 hr {
   height: 2px;
@@ -87,9 +103,13 @@ hr {
   opacity: 0.2;
 }
 
-.card-deck .card{
+
+
+.card-deck .card {
   margin-left: 20px;
 }
+
+
 
 .card {
   cursor: pointer;
@@ -99,8 +119,7 @@ hr {
   color: $SS;
   margin: 0;
 
-
-  .card-text{
+  .card-text {
     text-transform: none;
     display: none;
   }
@@ -109,25 +128,30 @@ hr {
     height: 70%;
   }
 
-  .card-body.myborder{
+  .card-body.myborder {
     border: 1.6px solid #dee2e6 !important;;
   }
 
-  .card-text,.card-title{
+  .card-text,.card-title {
     font-size: 16px;
     font-style: normal;
   }
 
-  .card-title{
+  .card-title {
     font-weight: 500;
   }
+
 }
+
+
+
 
 .card:hover {
   box-shadow: 1px 1px 12px rgba(33,33,33,0.1);
   bottom: 10px;
   position: relative;
-  .card-text{
+
+  .card-text {
       transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
       -moz-transform: translate(0px, 0px);
@@ -143,17 +167,22 @@ hr {
     transform: scale(1.01);
     height: 60%;
   }
+
 }
+
+
+
 
 .mycontainer {
   top:10%;
   width:100%;
 }
 
+
+
 .mt-my {
   margin-top: 4rem !important;
 }
-
 
 
 
@@ -179,9 +208,11 @@ h4 {
   padding: 0;
 }
 
+
 #dialog{
   width: 40%;
 }
+
 
 .mydialog {
   width: auto;
@@ -210,6 +241,8 @@ h4 {
   }
 
 }
+
+
 .exit {
   width: 100%;
   height: 41px;
@@ -224,8 +257,8 @@ h4 {
   border-bottom: 3px solid $ee;
 }
 
-/** DRAG AND DROP CSS **/
 
+/** DRAG AND DROP CSS **/
 .dropzone {
   background: white;
   border-radius: 10px;
@@ -236,17 +269,17 @@ h4 {
 }
 
 
-
 .btn-mycolor {
   background: $btn_background;
   color: $ff;
   font-size: 16px;
   font-weight: 500;
-  text-align: left;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   line-height: normal;
 }
+
+
 /** DRAG AND DROP CSS**/
 .dropzone {
   border-image: none;
@@ -257,7 +290,7 @@ h4 {
   box-shadow: 0 1px 16px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   background-color: $ff;
-  h6{
+  h6 {
     color: $aa;
     font-size: 12px;
     font-weight: 700;
@@ -268,11 +301,12 @@ h4 {
     font-family: "Roboto - Regular";
     line-height: 24px;
   }
-  small{
+
+  small {
     text-transform: none;
     color: $aa;
-
   }
+
   button.select {
     width: 213px;
     height: 48px;
@@ -291,44 +325,58 @@ h4 {
     border: 1px dashed black;
     border-radius: 5px;
     padding: 30px 0 30px 0;
-
   }
 
 }
 
+
+
 @media only screen and (max-width: 1200px) {
-  .card{
+  .card {
     width: 13.5rem;
     height: 11rem;
   }
 }
 
+
+
 @media only screen and (max-width: 576px) {
-  .card{
+  .card {
     width: auto;
     height: auto;
   }
 
-  .card-deck .card{
+  .card-deck .card {
     margin-left: 0;
   }
 
-  .dropzone{
-    max-width: 50%;
+  .dropzone {
+    width: auto;
+    min-width: auto;
+
+    .exit {
+      width: 100%;
+    }
   }
+
 }
 
+
+
 @media only screen and (max-width: 1240px) {
-  #dialog{
+  #dialog {
     width: 70%;
   }
 }
 
+
+
 @media only screen and (max-width: 620px) {
-  #dialog{
+  #dialog {
     width: 90%;
-    input{
+    input {
       width: 65%;
     }
   }
+
 }

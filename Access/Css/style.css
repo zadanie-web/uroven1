@@ -4,6 +4,10 @@
   font-family: 'Roboto';
   src: url("../fonts/Roboto-Medium.ttf"); }
 
+@font-face {
+  font-family: "Roboto - Regular";
+  src: url("../fonts/Roboto-Regular.ttf"); }
+
 .display-non {
   display: none; }
 
@@ -55,9 +59,7 @@ h3 {
   color: #aaaaaa;
   font-size: 14px;
   font-weight: 500;
-  font-style: normal;
   line-height: 30.98px;
-  text-align: left;
   letter-spacing: 0.7px;
   text-transform: none; }
 
@@ -183,7 +185,6 @@ h4 {
   color: #ffffff;
   font-size: 16px;
   font-weight: 500;
-  text-align: left;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   line-height: normal; }
@@ -240,7 +241,10 @@ h4 {
   .card-deck .card {
     margin-left: 0; }
   .dropzone {
-    max-width: 50%; } }
+    width: auto;
+    min-width: auto; }
+    .dropzone .exit {
+      width: 100%; } }
 
 @media only screen and (max-width: 1240px) {
   #dialog {
