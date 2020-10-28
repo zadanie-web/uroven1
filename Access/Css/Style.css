@@ -93,11 +93,11 @@ hr {
   .card .card-title {
     font-weight: 500; }
 
-.card:hover {
+.card:hover, card:focus {
   box-shadow: 1px 1px 12px rgba(33, 33, 33, 0.1);
   bottom: 10px;
   position: relative; }
-  .card:hover .card-text {
+  .card:hover .card-text, card:focus .card-text {
     transform: translate(0px, 0px);
     -webkit-transform: translate(0px, 0px);
     -moz-transform: translate(0px, 0px);
@@ -106,7 +106,7 @@ hr {
     opacity: 1;
     display: block;
     color: #aaaaaa; }
-  .card:hover .card-img-top {
+  .card:hover .card-img-top, card:focus .card-img-top {
     opacity: 0.9;
     transform: scale(1.01);
     height: 60%; }
