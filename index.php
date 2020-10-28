@@ -10,7 +10,6 @@ require_once 'Develop/For_Test_Develop.php';
  */
 ?>
 
-
 <!DOCTYPE html>
 <html lang="sk">
 <head>
@@ -22,11 +21,13 @@ require_once 'Develop/For_Test_Develop.php';
     <title>Uroveň1</title>
     <!-- TEST BOOTSTRAP 8K -->
     <link rel="stylesheet" href="Access/Css/bower_components/bootstrap-big-grid/dist/css/bootstrap-big-grid.min.css"/>
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" rel="stylesheet">
+
     <!-- CSS -->
     <link rel="stylesheet" href="Access/js/ui/jquery-ui.css">
     <link rel="stylesheet" href="Access/Css/bootstrap.css">
     <link rel="stylesheet" href="Access/Css/Style.css">
-    <link  href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" rel="stylesheet">
+
     <!-- SCRIPT -->
     <script src="Access/js/ui/external/jquery/jquery.js"></script>
     <script src="Access/js/ui/jquery-ui.js"></script>
@@ -84,7 +85,7 @@ require_once 'Develop/For_Test_Develop.php';
                         <!-- IBA SOM SI POMOHOL AZ NEMUSIM VSETKO OPAKOVANE PISAT DUFAM ZE TO NEVADÍ -->
                         <?php foreach ($Galerry as $kat):?>
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-rt-4 col-4k-5 col-8k-6 float-left p-0 m-0">
-                                <div class="card border-0 mt-4">
+                                <div class="card startshow border-0 mt-4">
                                     <img class="card-img-top h-100" src="<?= $kat['image'];?>" alt="Kategória obrázkov <?= $kat['Name'];?>"/>
                                 </div>
                             </div>
@@ -104,42 +105,8 @@ require_once 'Develop/For_Test_Develop.php';
             </div>
         </div>
 
-        <!-- SCRIPT FOR ANIMATE BC + ANIMATE PAGE GALLERY -->
-        <script>
-        /** ANIMATE BACKGROUND HOVER **/
-        function animatehover(){
-                $('[id^="card"]').hover(function() {
-                    let newImg = $('.card-img-top',this).attr('src');
-                    $('#headerbc').attr('src',newImg)
-                });
-            }
-        /** DIALOG MY START AND CLOSE */
-        $(document).ready(function (){
-            $('.kategorystart').click(function (){
-                $('.start').toggle('fade',40);
-            })
-
-            $('.opendrop').click(function (){
-                $('.startdrop').toggle('fade',40);
-            });
-
-            $('.start-galery').click(function (){
-                $('#kategory').toggle('fade',100);
-                $('#galerry').delay(200).toggle('fade',200);
-            })
-
-            $('.back-galery').click(function (){
-                $('#galerry').toggle('fade',100);
-                $('#kategory').delay(200).toggle('fade',200);
-            })
-        })
-
-        /** CALL MY FUNCTION */
-        animatehover();
-        </script>
-
         <!-- BACKGROUND DARK FOR DIALOG -->
-        <div class="display-non startdrop start darked position-absolute"></div>
+        <div class="showimage startdrop display-non start darked position-absolute"></div>
 
         <!-- DIALOG ADD KATEGORY  -->
         <div class="display-non start d-flex flex-row justify-content-center align-items-center">
@@ -167,7 +134,7 @@ require_once 'Develop/For_Test_Develop.php';
         </div>
 
         <!-- DRAG AND DROP -->
-        <section class="display-non  d-flex flex-row justify-content-center  align-items-center">
+        <div class="display-non d-flex flex-row justify-content-center align-items-center">
             <div id="dropzone" class="display-non startdrop  position-absolute">
                 <div class="exit">
                     <div class="float-right opendrop">
@@ -177,7 +144,7 @@ require_once 'Develop/For_Test_Develop.php';
                 </div>
                 <form class="dropzone needsclick" id="dupload" action="/" method="POST" enctype="multipart/form-data">
                     <div class="dz-message m-0 p-0 needsclick">
-                            <h4 class="m-0 p-0">pridať fotky</h4>
+                        <h4 class="m-0 p-0">pridať fotky</h4>
                         <span class="note needsclick"></span>
                         <div class="w-100 mydrop mt-3 h-50">
                             <img src="Media/fot.svg" alt="Pridať obrázok/y">
@@ -192,7 +159,72 @@ require_once 'Develop/For_Test_Develop.php';
                     </div>
                 </form>
             </div>
-        </section>
+        </div>
+
+        <!-- GALLERY CLICK PHOTO -->
+        <div id="showimage" class="display-non">
+            <div class="single-gallery">
+                <div class="mywidth">
+                    <div class="exit-gallery">
+                        <div class="mynavexit">
+                            <div class="ex startshow">
+                                <img src="Media/close.svg" alt="zavrieť dialóg">
+                                <span>zavrieť</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mySlideShow">
+                        <?php foreach ($Galerry as $item):?>
+                            <img src="<?= $item['image'];?>" data-id="sports" data-hidden="false" alt="galery" class="rounded img-fluid">
+                        <?php endforeach;?>
+                    </div>
+                    <div id="single-next-prev">
+                        <span id="single-left"><img src="Media/prev_icon.svg" class="rounded img-fluid" alt="Späť"></span>
+                        <span id="single-right"><img src="Media/next_icon.svg" class="rounded img-fluid" alt="ďalší obrázok"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCRIPT FOR ANIMATE BC + ANIMATE PAGE GALLERY -->
+        <script>
+            /** ANIMATE BACKGROUND HOVER **/
+            function animatehover(){
+                $('[id^="card"]').hover(function() {
+                    let newImg = $('.card-img-top',this).attr('src');
+                    $('#headerbc').attr('src',newImg)
+                });
+            }
+            /** DIALOG MY START AND CLOSE */
+            $(document).ready(function (){
+                /** START DIALOG ADD CATEGORY **/
+                $('.kategorystart').click(function (){
+                    $('.start').toggle('fade',40);
+                });
+                /** START DROP **/
+                $('.opendrop').click(function (){
+                    $('.startdrop').toggle('fade',40);
+                });
+                /** ALL IMAGE FOR CATEGORY **/
+
+                $('.start-galery').click(function (){
+                    $('#kategory').toggle('fade',100);
+                    $('#galerry').delay(200).toggle('fade',200);
+                });
+                /** BACK TO CATEGORY **/
+                $('.back-galery').click(function (){
+                    $('#galerry').toggle('fade',100);
+                    $('#kategory').delay(200).toggle('fade',200);
+                });
+                /** START SHOW IMAGE GALERY */
+                $('.startshow').click(function (){
+                    $('#showimage,.showimage').toggle('fade',10);
+                })
+            })
+
+            /** CALL MY FUNCTION */
+            animatehover();
+        </script>
 
         <!-- SCRIPT FOR DRAG AND DROP -->
         <script>
@@ -258,5 +290,23 @@ require_once 'Develop/For_Test_Develop.php';
                 }
             }
         </script>
-    </body>
+        <!-- for photo -->
+        <script>
+            $(document).ready(function(){
+                function generateSlider(){
+                    $('.mySlideShow').cycle({
+                        next: "#single-right",
+                        pauseOnHover: true,
+                        log: false,
+                        pager: "#single-pager",
+                        prev: "#single-left",
+                        slides: "img[data-hidden='false']"
+                    });
+                }
+                generateSlider();
+            });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.9/js/lightgallery.min.js"></script>
+   </body>
 </html>

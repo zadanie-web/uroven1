@@ -24,7 +24,10 @@ $btn_background: #42c78d
 .cursor-p
   cursor: pointer
 
+
 body
+  height: 100%
+  width: 100%
   font-family: $font
   text-transform: uppercase
 
@@ -169,8 +172,7 @@ h4
     border: none
     padding: 0
     text-transform: uppercase
-
-    \::placeholder
+    ::placeholder
       width: 231px
       height: 16px
       color: $aa
@@ -254,6 +256,82 @@ h4
     border-radius: 5px
     padding: 30px 0 30px 0
 
+
+/** FOR GALLERY **/
+
+
+.single-gallery
+  width: 100%
+  min-width: 80%
+  overflow: hidden
+  position: relative
+  margin-top: -15%
+  height: 90%
+
+.mySlideShow
+  position: relative
+  margin: 0 auto
+  width: 80%
+  height: 90%
+
+.exit-gallery
+  height: 30px
+  width: 80%
+  margin: 0 auto
+
+.mynavexit
+  position: relative
+  right: 0
+
+.ex
+  float: right
+  color: $ff
+
+.mywidth
+  width: 80%
+  margin: 0 auto
+  position: relative
+
+.cycle-slideshow img
+  width: 100%
+  height: 100%
+  position: relative
+
+
+#single-pager a img
+  width: 49.3px !important
+  height: 49.3px !important
+  border: 1px solid #fff
+
+
+#single-pager a.cycle-pager-active img
+  opacity: 0.4
+
+
+#single-left,
+#single-right
+  position: absolute
+  top: 50%
+  z-index: 1000
+  cursor: pointer
+
+
+#single-left
+  left: 4%
+
+
+#single-right
+  right: 4%
+
+
+img[data-hidden="true"]
+  display: none
+
+
+
+
+
+
 @media only screen and (max-width: 1200px)
   .card
     width: 13.5rem
@@ -284,3 +362,6 @@ h4
 
     input
       width: 65%
+
+
+
