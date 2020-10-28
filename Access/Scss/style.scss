@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: url('fonts/Roboto-Medium.ttf');
+  src: url('../fonts/Roboto-Medium.ttf');
 }
 $ff: #ffffff;
 $aa: #aaaaaa;
@@ -97,6 +97,8 @@ hr {
   height: 13rem;
   background-color: #ffffff;
   color: $SS;
+  margin: 0;
+
 
   .card-text{
     text-transform: none;
@@ -177,8 +179,12 @@ h4 {
   padding: 0;
 }
 
+#dialog{
+  width: 40%;
+}
+
 .mydialog {
-  width: 620px;
+  width: auto;
   height: 150px;
   box-shadow: 0 1px 16px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -275,7 +281,6 @@ h4 {
     color: $aa;
     font-size: 16px;
     font-weight: 500;
-    font-style: normal;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.8px;
@@ -302,5 +307,28 @@ h4 {
   .card{
     width: auto;
     height: auto;
+  }
+
+  .card-deck .card{
+    margin-left: 0;
+  }
+
+  .dropzone{
+    max-width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  #dialog{
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  #dialog{
+    width: 90%;
+    input{
+      width: 65%;
+    }
   }
 }

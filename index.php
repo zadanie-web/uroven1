@@ -129,13 +129,14 @@ require_once 'Develop/For_Test_Develop.php';
         <div class="display-non startdrop start darked position-absolute"></div>
         <!-- DIALOG KATEGORY -->
         <div class="display-non start d-flex flex-row justify-content-center align-items-center">
-            <div id="dialog" class="display-non start position-absolute">
+            <div id="dialog" class="display-non start position-absolute ">
                 <div class="exit">
                     <div class="float-right kategorystart">
                         <img src="Media/close.svg" alt="zavrieť dialóg">
                         <span>zavrieť</span>
                     </div>
                 </div>
+
                 <div class="mydialog">
                     <div class="p-3">
                         <h4>pridať kategóriu</h4>
@@ -151,6 +152,7 @@ require_once 'Develop/For_Test_Develop.php';
                 </div>
             </div>
         </div>
+
         <!-- DRAG AND DROP -->
         <section class="display-non  d-flex flex-row justify-content-center  align-items-center">
             <div id="dropzone" class="display-non startdrop  position-absolute">

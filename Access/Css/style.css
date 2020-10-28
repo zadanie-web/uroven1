@@ -2,7 +2,7 @@
 /** BRIGHTNESS AND BLUR FOR HEADER BACKGROUND IMG */
 @font-face {
   font-family: 'Roboto';
-  src: url("fonts/Roboto-Medium.ttf"); }
+  src: url("../fonts/Roboto-Medium.ttf"); }
 
 .display-non {
   display: none; }
@@ -74,7 +74,8 @@ hr {
   width: 15.5rem;
   height: 13rem;
   background-color: #ffffff;
-  color: #555555; }
+  color: #555555;
+  margin: 0; }
   .card .card-text {
     text-transform: none;
     display: none; }
@@ -132,8 +133,11 @@ h4 {
   margin: 0;
   padding: 0; }
 
+#dialog {
+  width: 40%; }
+
 .mydialog {
-  width: 620px;
+  width: auto;
   height: 150px;
   box-shadow: 0 1px 16px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -215,7 +219,6 @@ h4 {
     color: #aaaaaa;
     font-size: 16px;
     font-weight: 500;
-    font-style: normal;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.8px;
@@ -233,4 +236,18 @@ h4 {
 @media only screen and (max-width: 576px) {
   .card {
     width: auto;
-    height: auto; } }
+    height: auto; }
+  .card-deck .card {
+    margin-left: 0; }
+  .dropzone {
+    max-width: 50%; } }
+
+@media only screen and (max-width: 1240px) {
+  #dialog {
+    width: 70%; } }
+
+@media only screen and (max-width: 620px) {
+  #dialog {
+    width: 90%; }
+    #dialog input {
+      width: 65%; } }
