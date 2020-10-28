@@ -1,0 +1,257 @@
+/** SETTING: COLOR ,BACKGROUND .FONT ,BRIGHTNESS ,BLUR */
+/** BRIGHTNESS AND BLUR FOR HEADER BACKGROUND IMG */
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto-Medium.ttf"); }
+
+@font-face {
+  font-family: "Roboto - Regular";
+  src: url("../fonts/Roboto-Regular.ttf"); }
+
+.display-non {
+  display: none; }
+
+.cursor-p {
+  cursor: pointer; }
+
+body {
+  font-family: Roboto;
+  text-transform: uppercase; }
+
+h2, h3, .addkategory {
+  font-style: normal;
+  text-align: left;
+  text-transform: uppercase;
+  line-height: normal;
+  letter-spacing: normal; }
+
+h2, h3 {
+  color: #ffffff;
+  font-weight: 500; }
+
+.addkategory {
+  height: 16px;
+  color: #aaaaaa;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 30.98px; }
+
+h2 {
+  font-size: 24px;
+  letter-spacing: 1.2px;
+  font-weight: 700; }
+
+h3 {
+  font-weight: 550;
+  font-size: 16px;
+  letter-spacing: 0.8px; }
+
+.headerimage {
+  height: 338px;
+  filter: brightness(70%); }
+  .headerimage img {
+    width: 100%;
+    height: 100%;
+    filter: blur(5px);
+    object-fit: cover; }
+
+.myfoot {
+  color: #aaaaaa;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 30.98px;
+  letter-spacing: 0.7px;
+  text-transform: none; }
+
+hr {
+  height: 2px;
+  background-color: #eeeeee;
+  opacity: 0.2; }
+
+.card-deck .card {
+  margin-left: 20px; }
+
+.card {
+  cursor: pointer;
+  width: 15.5rem;
+  height: 13rem;
+  background-color: #ffffff;
+  color: #555555;
+  margin: 0; }
+  .card .card-text {
+    text-transform: none;
+    display: none; }
+  .card .card-img-top {
+    height: 70%; }
+  .card .card-body.myborder {
+    border: 1.6px solid #dee2e6 !important; }
+  .card .card-text, .card .card-title {
+    font-size: 16px;
+    font-style: normal; }
+  .card .card-title {
+    font-weight: 500; }
+
+.card:hover {
+  box-shadow: 1px 1px 12px rgba(33, 33, 33, 0.1);
+  bottom: 10px;
+  position: relative; }
+  .card:hover .card-text {
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    opacity: 1;
+    display: block;
+    color: #aaaaaa; }
+  .card:hover .card-img-top {
+    opacity: 0.9;
+    transform: scale(1.01);
+    height: 60%; }
+
+.mycontainer {
+  top: 10%;
+  width: 100%; }
+
+.mt-my {
+  margin-top: 4rem !important; }
+
+/** BACKGROUND OPEN DIALOG * */
+.darked {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); }
+
+/** MY DIALOG * */
+h4 {
+  color: #555555;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0; }
+
+#dialog {
+  width: 40%; }
+
+.mydialog {
+  width: auto;
+  height: 150px;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: #ffffff; }
+  .mydialog input {
+    width: 75%;
+    border: none;
+    padding: 0;
+    text-transform: uppercase; }
+    .mydialog input ::placeholder {
+      width: 231px;
+      height: 16px;
+      color: #aaaaaa;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: left;
+      text-transform: uppercase;
+      font-style: normal;
+      letter-spacing: 0.8px;
+      line-height: normal; }
+
+.exit {
+  width: 100%;
+  height: 41px;
+  color: #ffffff; }
+
+.myaction {
+  margin-top: 2rem;
+  height: 40px;
+  border-bottom: 3px solid #eeeeee; }
+
+/** DRAG AND DROP CSS * */
+.dropzone {
+  background: white;
+  border-radius: 10px;
+  border-image: none;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.btn-mycolor {
+  background: #42c78d;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: normal; }
+
+/** DRAG AND DROP CSS* */
+.dropzone {
+  border-image: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+  height: 337px;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: #ffffff; }
+  .dropzone h6 {
+    color: #aaaaaa;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    font-style: normal;
+    letter-spacing: 0.2px;
+    font-family: "Roboto - Regular";
+    line-height: 24px; }
+  .dropzone small {
+    text-transform: none;
+    color: #aaaaaa; }
+  .dropzone button.select {
+    width: 213px;
+    height: 48px;
+    border-radius: 4px;
+    border: 3px solid #aaaaaa;
+    color: #aaaaaa;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    line-height: normal; }
+  .dropzone .mydrop {
+    border: 1px dashed black;
+    border-radius: 5px;
+    padding: 30px 0 30px 0; }
+
+@media only screen and (max-width: 1200px) {
+  .card {
+    width: 13.5rem;
+    height: 11rem; } }
+
+@media only screen and (max-width: 576px) {
+  .card {
+    width: auto;
+    height: auto; }
+  .card-deck .card {
+    margin-left: 0; }
+  .dropzone {
+    width: auto;
+    min-width: auto; }
+    .dropzone .exit {
+      width: 100%; } }
+
+@media only screen and (max-width: 1240px) {
+  #dialog {
+    width: 70%; } }
+
+@media only screen and (max-width: 620px) {
+  #dialog {
+    width: 90%; }
+    #dialog input {
+      width: 65%; } }

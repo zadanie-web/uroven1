@@ -25,7 +25,7 @@ require_once 'Develop/For_Test_Develop.php';
     <!-- CSS -->
     <link rel="stylesheet" href="Access/js/ui/jquery-ui.css">
     <link rel="stylesheet" href="Access/Css/bootstrap.css">
-    <link rel="stylesheet" href="Access/Css/style.css">
+    <link rel="stylesheet" href="Access/Css/Style.css">
     <link  href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" rel="stylesheet">
     <!-- SCRIPT -->
     <script src="Access/js/ui/external/jquery/jquery.js"></script>
