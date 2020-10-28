@@ -14,3 +14,6 @@ Použil som ako scss tak aj sass .
 Sass je kompletné scss je len ukážkovo . 
 
 # Ak je niečo na vytknutie prosím dajte mi o tom vedieť chcem sa zlepšovať .
+
+Online verzia presnej kópie kódu ktorá je tu na githube je zverejnená na 
+[bjs.sk](https://uroven1.bjs.sk./)
